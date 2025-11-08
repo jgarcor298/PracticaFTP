@@ -47,3 +47,21 @@ sudo systemctl status named
 dig @192.168.56.10 jorgegarre.test
 nslookup jorgegarre.test 192.168.56.10
 
+# Instalar paquete vsftpd
+sudo apt install vsftpd -y
+
+# Hacer copia de seguridad de ichero vsftpd.conf
+sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bck
+
+# Crear usuarios locales 
+sudo useradd -m luis
+echo "luis:luis" | sudo chpasswd
+
+sudo useradd -m maria
+echo "maria:maria" | sudo chpasswd
+
+sudo useradd -m miguel
+echo "miguel:miguel" | sudo chpasswd
+
+# Crear ficheros de los usuarios y dar permisos
+

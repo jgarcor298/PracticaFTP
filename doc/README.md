@@ -1,1 +1,88 @@
-## Documentación Práctica FTP - Jorge Garre
+##
+
+Documentación Práctica FTP - Jorge Garre
+
+**Autor:** Jorge Garre Corrales
+
+### 2. Uso del cliente FTP gráfico.
+
+El cliente FTP que yo he elegido para realizar la práctica es CyberDuck
+
+![](assets/20251108_123846_image.png)
+
+3. Crea el directorio pruebasFTP en el anfitrión y cámbiate a dicho directorio.
+4. Crea en el directorio pruebasFTP el archivo datos1.txt con el contenido que quieras.
+
+![](assets/20251108_124023_image.png)
+
+
+5. Establece una conexión anónima al servidor ftp.cica.es.
+
+![](assets/20251108_124141_image.png)
+
+6. Desde el cliente descarga el archivo /pub/check
+
+![](assets/20251108_124220_image.png)
+
+
+7. Comprueba que se ha descargado el archivo
+
+![](assets/20251108_124405_image.png)
+
+8. Desde el cliente intenta subir al servidor el archivo datos1.txt.
+
+![](assets/20251108_124613_image.png)
+
+9. Cierra la conexión con el servidor.
+
+![](assets/20251108_124829_image.png)
+
+### 3. Instalación y configuración del servidor vsftpd sobre Linux
+
+Instala el servidor vsfptd en ftp.example.com y añade un registro CNAME en la zona DNS que
+apunte de ftp.example.com al servidor donde se alojará.
+
+![](assets/20251108_130825_image.png)
+
+1. Instala el paquete vsftpd
+
+![](assets/20251108_131804_image.png)
+
+
+2. Comprueba que se ha creado el usuario ftp y que su directorio home es /srv/ftp. Busca estos
+   datos en los archivos del sistema donde se guardan los usuarios (/etc/passwd), y donde se
+   guardan los grupos de usuarios (/etc/group).
+
+![](assets/20251108_131921_image.png)
+
+3. Comprueba que se ha creado el directorio /srv/ftp y que su propietario es el usuario root, y que su grupo es ftp.
+
+![](assets/20251108_132112_image.png)
+
+
+4. Lista los usuarios del sistema que no podrán acceder al servicio FTP (mira el fichero ftplinux.pdf en la sección Archivos de configuración).
+
+![](assets/20251108_132321_image.png)
+
+
+5. Comprueba que el servidor está iniciado y en ejecución (Usa systemctl).
+
+![](assets/20251108_132629_image.png)
+
+
+6. Comprueba que el servidor está escuchando por el puerto 21 (usa ss -tlpn).
+
+   ![](assets/20251108_132941_image.png)
+8. Realiza una copia de seguridad del archivo de configuración /etc/vsftpd.conf.
+
+![](assets/20251108_133057_image.png)
+
+
+8. Crea los usuarios locales luis, maria y miguel
+
+![](assets/20251108_133633_image.png)
+
+
+9. Crearemos unos ficheros de prueba:
+
+   ![](assets/20251108_134418_image.png)
