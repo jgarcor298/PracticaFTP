@@ -64,4 +64,7 @@ sudo useradd -m miguel
 echo "miguel:miguel" | sudo chpasswd
 
 # Crear ficheros de los usuarios y dar permisos
-
+sudo touch /home/luis/luis{1,2}.txt
+sudo chown -R luis:luis /home/luis
+sudo touch /home/maria/maria{1,2}.txt
+sudo chown -R maria:maria /home/maria
