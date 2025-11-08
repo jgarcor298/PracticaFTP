@@ -1,6 +1,4 @@
-##
-
-Documentación Práctica FTP - Jorge Garre
+## Documentación Práctica FTP - Jorge Garre
 
 **Autor:** Jorge Garre Corrales
 
@@ -15,7 +13,6 @@ El cliente FTP que yo he elegido para realizar la práctica es CyberDuck
 
 ![](assets/20251108_124023_image.png)
 
-
 5. Establece una conexión anónima al servidor ftp.cica.es.
 
 ![](assets/20251108_124141_image.png)
@@ -23,7 +20,6 @@ El cliente FTP que yo he elegido para realizar la práctica es CyberDuck
 6. Desde el cliente descarga el archivo /pub/check
 
 ![](assets/20251108_124220_image.png)
-
 
 7. Comprueba que se ha descargado el archivo
 
@@ -48,7 +44,6 @@ apunte de ftp.example.com al servidor donde se alojará.
 
 ![](assets/20251108_131804_image.png)
 
-
 2. Comprueba que se ha creado el usuario ftp y que su directorio home es /srv/ftp. Busca estos
    datos en los archivos del sistema donde se guardan los usuarios (/etc/passwd), y donde se
    guardan los grupos de usuarios (/etc/group).
@@ -59,30 +54,40 @@ apunte de ftp.example.com al servidor donde se alojará.
 
 ![](assets/20251108_132112_image.png)
 
-
 4. Lista los usuarios del sistema que no podrán acceder al servicio FTP (mira el fichero ftplinux.pdf en la sección Archivos de configuración).
 
 ![](assets/20251108_132321_image.png)
-
 
 5. Comprueba que el servidor está iniciado y en ejecución (Usa systemctl).
 
 ![](assets/20251108_132629_image.png)
 
-
 6. Comprueba que el servidor está escuchando por el puerto 21 (usa ss -tlpn).
 
    ![](assets/20251108_132941_image.png)
-8. Realiza una copia de seguridad del archivo de configuración /etc/vsftpd.conf.
+7. Realiza una copia de seguridad del archivo de configuración /etc/vsftpd.conf.
 
 ![](assets/20251108_133057_image.png)
-
 
 8. Crea los usuarios locales luis, maria y miguel
 
 ![](assets/20251108_133633_image.png)
 
-
 9. Crearemos unos ficheros de prueba:
 
    ![](assets/20251108_134418_image.png)
+10. Modifica el archivo de configuración del servicio FTP
+
+    Para la cofiguración del fichero he copiado el fichero en mi la carpeta vagrant del proyecto para poder estarlo desde VSCode y despues en el fichero provisional copiarlo a la máquina.
+
+    ![](assets/20251108_153629_image.png)
+
+Una vez configurado el fichero he tenido que crear el archivo .message (Para el mensaje de bienvenida de usuarios anonimos) y el fichero vsftpd.chroot_list (Para indicar que el usuario maria no esta enjaulado)
+
+
+j. Al reiniciar el servicio asegúrate de su estado y que el servidor está a la escucha por el
+puerto 21/TCP.
+
+![](assets/20251108_160922_image.png)
+
+k–m) Pruebas desde el cliente FTP

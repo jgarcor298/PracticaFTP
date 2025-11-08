@@ -68,3 +68,11 @@ sudo touch /home/luis/luis{1,2}.txt
 sudo chown -R luis:luis /home/luis
 sudo touch /home/maria/maria{1,2}.txt
 sudo chown -R maria:maria /home/maria
+
+# Copiar ficheros de configuración del servidor ftp
+sudo cp /vagrant/config/.message /srv/ftp/
+sudo cp /vagrant/config/vsftpd.chroot_list /etc
+sudo cp /vagrant/config/vsftpd.conf /etc
+
+# Reinicar el servicio despues de añadir los ficheros
+sudo systemctl restart vsftpd
