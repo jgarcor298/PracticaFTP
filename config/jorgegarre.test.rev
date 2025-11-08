@@ -1,0 +1,13 @@
+;
+; X.168.192
+;
+$TTL 86400
+@ IN SOA jorgegarre.test. admin.jorgegarre.test. (
+  1 ; Serial 
+  3600 ; Refresh
+  1800 ; Retry
+  604800 ; Expire
+  86400 ) ; Negative Cache TTL
+;
+@ IN NS jorgegarre.test.
+1 IN PTR jorgegarre.test.

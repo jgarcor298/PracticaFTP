@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Antes que nada actualizamos la maquina virtual
+sudo apt update
+sudo apt upgrade -y
+
+# Instalamos los paquetes necesarios para el servidor DNS
+sudo apt install -y bind9 bind9utils bind9-doc
+
+# Reemplazar fichero /etc/default/named
+sudo cp /vagrant/config/named /etc/default/
+
+# Hacer copia del fichero /etc/bind/named.conf.options
+sudo cp /etc/bind/named.conf.options /etc/bind/named.conf.options_bck
+
+# Reemplazar fichero /etc/bind/named.conf.options
+sudo cp /vagrant/config/named.conf.options /etc/bind/named.conf.options
+
+# Comprobamos que la configuración es correcta
+named-checkconf /etc/bind/named.conf.options
+
+# Reiniciamos el servicio named
+sudo systemctl restart named
+
+# Copiamos el fichero /etc/bind/named.conf.local
+sudo cp /vagrant/config/named.conf.local /etc/bind/named.conf.local
+
+# Copiamos el fichero /var/lib/bind/jorgegarre.test.dns
+sudo cp /vagrant/config/jorgegarre.test.dns /var/lib/bind/
+
+# Copiamos el fichero /var/lib/bind/jorgegarre.test.rev
+sudo cp /vagrant/config/jorgegarre.test.rev /var/lib/bind/  
+
+# Comprobamos que los ficheros esten configurados correctamente
+# Estos comandos realmente no son necesarios en este fichero ya que no vamos a ver que devuelven
+# Pero he considerado que esta bien dejarlos por aqui escritos por si acaso
+named-checkzone jorgegarre.test. /var/lib/bind/jorgegarre.test.dns
+named-checkzone 56.168.192.in-addr.arpa. /var/lib/bind/jorgegarre.test.rev
+
+# Reiniciamos y comprobamos el servicio named
+sudo systemctl restart named
+sudo systemctl status named
+
+# Comandos para la comprobación de la resolución del servidor
+# Estos comandos realmente no son necesarios en este fichero ya que no vamos a ver que devuelven
+# Pero he considerado que esta bien dejarlos por aqui escritos por si acaso
+dig @192.168.56.10 jorgegarre.test
+nslookup jorgegarre.test 192.168.56.10
+
