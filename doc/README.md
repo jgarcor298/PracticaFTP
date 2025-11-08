@@ -90,4 +90,18 @@ puerto 21/TCP.
 
 ![](assets/20251108_160922_image.png)
 
-k–m) Pruebas desde el cliente FTP
+k. Desde el cliente FTP, realiza una conexión anónima y comprueba la secuencia de conexión.
+
+![](assets/20251108_162106_image.png)
+
+
+l. También realiza una conexión autentificada con el usuario maria y comprueba que NO está
+enjaulado en su home.
+
+![](assets/20251108_162256_image.png)
+
+
+m. Además realiza una conexión autentificada con el usuario luis y comprueba que SI está
+enjaulado en su home.
+
+![](assets/20251108_162420_image.png)

@@ -47,6 +47,9 @@ sudo systemctl status named
 dig @192.168.56.10 jorgegarre.test
 nslookup jorgegarre.test 192.168.56.10
 
+# Copiar fichero resolv.conf
+sudo cp /vagrant/config/resolv.conf /etc/
+
 # Instalar paquete vsftpd
 sudo apt install vsftpd -y
 
@@ -76,3 +79,5 @@ sudo cp /vagrant/config/vsftpd.conf /etc
 
 # Reinicar el servicio despues de añadir los ficheros
 sudo systemctl restart vsftpd
+
+#
