@@ -84,7 +84,6 @@ apunte de ftp.example.com al servidor donde se alojará.
 
 Una vez configurado el fichero he tenido que crear el archivo .message (Para el mensaje de bienvenida de usuarios anonimos) y el fichero vsftpd.chroot_list (Para indicar que el usuario maria no esta enjaulado)
 
-
 j. Al reiniciar el servicio asegúrate de su estado y que el servidor está a la escucha por el
 puerto 21/TCP.
 
@@ -94,12 +93,10 @@ k. Desde el cliente FTP, realiza una conexión anónima y comprueba la secuencia
 
 ![](assets/20251108_162106_image.png)
 
-
 l. También realiza una conexión autentificada con el usuario maria y comprueba que NO está
 enjaulado en su home.
 
 ![](assets/20251108_162256_image.png)
-
 
 m. Además realiza una conexión autentificada con el usuario luis y comprueba que SI está
 enjaulado en su home.

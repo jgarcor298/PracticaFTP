@@ -53,7 +53,7 @@ sudo cp /vagrant/config/resolv.conf /etc/
 # Instalar paquete vsftpd
 sudo apt install vsftpd -y
 
-# Hacer copia de seguridad de ichero vsftpd.conf
+# Hacer copia de seguridad de fichero vsftpd.conf
 sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.bck
 
 # Crear usuarios locales 
@@ -80,4 +80,3 @@ sudo cp /vagrant/config/vsftpd.conf /etc
 # Reinicar el servicio despues de añadir los ficheros
 sudo systemctl restart vsftpd
 
-#
