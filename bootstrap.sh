@@ -72,6 +72,13 @@ sudo chown -R luis:luis /home/luis
 sudo touch /home/maria/maria{1,2}.txt
 sudo chown -R maria:maria /home/maria
 
+# Añadir certificado ssl
+sudo cp /vagrant/config/certs/jorgegarre.test.key /etc/ssl/private
+sudo cp /vagrant/config/certs/jorgegarre.test.pem /etc/ssl/certs
+
+sudo chmod 600 /etc/ssl/private/jorgegarre.test.key
+sudo chmod 644 /etc/ssl/certs/jorgegarre.test.pem
+
 # Copiar ficheros de configuración del servidor ftp
 sudo cp /vagrant/config/.message /srv/ftp/
 sudo cp /vagrant/config/vsftpd.chroot_list /etc
@@ -79,10 +86,3 @@ sudo cp /vagrant/config/vsftpd.conf /etc
 
 # Reinicar el servicio despues de añadir los ficheros
 sudo systemctl restart vsftpd
-
-# Añadir certificado ssl
-sudo cp /vagrant/config/certs/jorgegarre.test.key /etc/ssl/private
-sudo cp /vagrant/config/certs/jorgegarre.test.pem /etc/ssl/certs
-
-sudo chmod 600 /etc/ssl/private/jorgegarre.test.key
-sudo chmod 644 /etc/ssl/certs/jorgegarre.test.pem
