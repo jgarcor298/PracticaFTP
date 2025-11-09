@@ -107,7 +107,28 @@ enjaulado en su home.
 
 1. Generar certificado![](assets/20251109_120100_image.png)
    Una vez generados ambos ficheros los he copiado en la carpeta /vagrant/config/certs para añadirlos desde el fichero provisional, darle permisos y que el certificado este activo siempre que se inicie la máquina
-
-
 2. Configurar fichero vsftpd.conf
    Estas són las directivas que he añadido para el funcionamiento del certificado SSL![](assets/20251109_121124_image.png)
+3. Reiniciar servicio y comprobar que se ejecuta en el puerto 21
+
+![](assets/20251109_121501_image.png)
+
+2. Para probar la conexión segura, usa un cliente gráfico. Crea una sesión segura autentificada con el usuario luis.
+
+   ![](assets/20251109_123810_image.png)
+3. Realiza la conexión y acepta el certificado del servidor. Una vez realizada la conexión, prueba a descargarte del servidor algún archivo. Asegúrate que la conexión es segura observando el candado cerrado que aparece en la parte inferior de la ventana de conexión.![](assets/20251109_123950_image.png)
+
+
+
+![](assets/20251109_124013_image.png)
+
+
+
+4. Realiza ahora una conexión segura anónima.
+
+![](assets/20251109_124137_image.png)
+
+
+5. Realiza una conexión segura con algún usuario.
+
+   ![](assets/20251109_124227_image.png)
