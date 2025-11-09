@@ -102,3 +102,9 @@ m. Además realiza una conexión autentificada con el usuario luis y comprueba q
 enjaulado en su home.
 
 ![](assets/20251108_162420_image.png)
+
+
+### 4. Configuración del servidor vsftpd seguro Linux
+
+1. Generar certificado![](assets/20251109_120100_image.png)
+   Una vez generados ambos ficheros los he copiado en la carpeta /vagrant/config/certs para añadirlos desde el fichero provisional, darle permisos y que el certificado este activo siempre que se inicie la máquina

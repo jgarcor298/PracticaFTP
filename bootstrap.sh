@@ -80,3 +80,9 @@ sudo cp /vagrant/config/vsftpd.conf /etc
 # Reinicar el servicio despues de añadir los ficheros
 sudo systemctl restart vsftpd
 
+# Añadir certificado ssl
+sudo cp /vagrant/config/certs/jorgegarre.test.key /etc/ssl/private
+sudo cp /vagrant/config/certs/jorgegarre.test.pem /etc/ssl/certs
+
+sudo chmod 600 /etc/ssl/private/jorgegarre.test.key
+sudo chmod 644 /etc/ssl/certs/jorgegarre.test.pem
